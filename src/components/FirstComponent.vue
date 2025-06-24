@@ -1,5 +1,5 @@
 <template>
-    <h2>第一個 Component</h2>
+    <h2 id="myH">第一個 Component</h2>
 </template>
 <style scoped>
 h2 {
@@ -7,5 +7,20 @@ h2 {
 }
 </style>
 <script setup>
+import { onBeforeMount, onMounted } from 'vue';
 
+
+
+
+//tab
+//Component Lifecycle Hooks
+onBeforeMount(() => {
+    console.log('組件即將掛載');
+})
+
+onMounted(() => {
+    console.log('組件已掛載，DOMTree 可用');
+    const myH = document.querySelector('#myH');
+    console.log('myH：', myH);
+})
 </script>
