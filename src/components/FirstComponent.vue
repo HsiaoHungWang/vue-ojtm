@@ -3,7 +3,7 @@
 </template>
 <style scoped>
 h2 {
-    color: red;
+    color: green;
 }
 </style>
 <script setup>
