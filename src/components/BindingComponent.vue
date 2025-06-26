@@ -5,7 +5,7 @@ import { ref } from 'vue';
 
 const title = ref('Vue.js');
 const ispan = ref('https://www.ispan.com.tw/_next/image/?url=%2Fimages%2FiSpan_Logo_slogan.png&w=3840&q=75')
-const isDisabled = ref(true);
+const isDisabled = ref(false);
 
 const user = ref({
     firstName: 'John',
@@ -33,7 +33,8 @@ const getName = () => {
         <p>出版：{{ author.books.length > 0 ? "有" : "沒有" }}</p>
         <hr />
         <!-- 屬性繫節 -->
-        <button disabled>click</button>
+        <input type="checkbox" v-model="isDisabled" />同意條款
+        <button :disabled="!isDisabled">click</button>
         <br />
         <img v-bind:title="title" :src="ispan" />
 
