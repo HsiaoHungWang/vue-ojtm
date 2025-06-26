@@ -1,4 +1,5 @@
 <script setup>
+import ApiStyle from './components/ApiStyle.vue';
 import FirstComponent from './components/FirstComponent.vue';
 import SecondComponent from './components/SecondComponent.vue';
 import ThirdComponent from './components/ThirdComponent.vue';
@@ -12,6 +13,7 @@ import ThirdComponent from './components/ThirdComponent.vue';
   <FirstComponent />
   <SecondComponent />
   <ThirdComponent></ThirdComponent>
+  <ApiStyle></ApiStyle>
 </template>
 
 <style scoped>
