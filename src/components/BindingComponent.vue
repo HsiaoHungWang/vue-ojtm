@@ -4,6 +4,9 @@ import { ref } from 'vue';
 // console.log(new Date().getDay()); // 0-6, 0表示星期日
 
 const title = ref('Vue.js');
+const ispan = ref('https://www.ispan.com.tw/_next/image/?url=%2Fimages%2FiSpan_Logo_slogan.png&w=3840&q=75')
+const isDisabled = ref(true);
+
 const user = ref({
     firstName: 'John',
     lastName: 'Wu'
@@ -28,6 +31,14 @@ const getName = () => {
         <p>{{ false ? "abc" : "xyz" }}</p>
         <p>星期 {{ week[new Date().getDay()] }}</p>
         <p>出版：{{ author.books.length > 0 ? "有" : "沒有" }}</p>
+        <hr />
+        <!-- 屬性繫節 -->
+        <button disabled>click</button>
+        <br />
+        <img v-bind:title="title" :src="ispan" />
+
+        <!-- <a href="" v-bind:title="title">iSpan</a> -->
+
     </div>
 </template>
 
