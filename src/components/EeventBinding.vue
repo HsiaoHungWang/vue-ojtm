@@ -37,7 +37,15 @@ const submitHandler = () => {
                 <input v-model.number="age" name="age" />
             </label>
             <p>目前年紀：{{ age }} {{ typeof age }}</p>
-
+            <label>學歷：
+                <select>
+                    <option value="highschool">高中</option>
+                    <option value="bachelor">大學</option>
+                    <option value="master">碩士</option>
+                    <option value="phd">博士</option>
+                </select>
+            </label>
+            <p>選擇的學歷： master 碩士</p>
             <button type="submit">送出</button>
         </form>
     </div>
