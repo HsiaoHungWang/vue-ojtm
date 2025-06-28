@@ -4,6 +4,8 @@ import { ref } from 'vue';
 
 const userName = ref('guest');
 const age = ref(20);
+const educationValue = ref('')
+const educationText = ref('')
 
 const submitHandler = () => {
     if (userName.value.length === 0) {
@@ -24,6 +26,16 @@ const submitHandler = () => {
 //     alert(`資料送出 ${userName.value}`);
 
 // };
+
+const changeHandler = event => {
+    // console.log(event.target);
+    //多個option會產生options的集合
+    //selectedIndex表示被選到option的index
+    const idx = event.target.selectedIndex;
+    // console.log(event.target.options[idx].value);
+    // console.log(event.target.options[idx].text);
+    educationText.value = event.target.options[idx].text;
+};
 </script>
 
 <template>
@@ -38,14 +50,15 @@ const submitHandler = () => {
             </label>
             <p>目前年紀：{{ age }} {{ typeof age }}</p>
             <label>學歷：
-                <select>
+                <select v-model="educationValue" @change="changeHandler">
+                    <option value="" disabled>請選擇</option>
                     <option value="highschool">高中</option>
                     <option value="bachelor">大學</option>
                     <option value="master">碩士</option>
                     <option value="phd">博士</option>
                 </select>
             </label>
-            <p>選擇的學歷： master 碩士</p>
+            <p>選擇的學歷： {{ educationValue }} {{ educationText }}</p>
             <button type="submit">送出</button>
         </form>
     </div>
