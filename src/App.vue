@@ -20,9 +20,16 @@ import HomeView from './views/HomeView.vue';
 
 <template>
   <h2 id="apph2">Hello, Vue!!</h2>
-  <HomeView></HomeView>
+  <RouterLink to="/">首頁</RouterLink> |
+  <RouterLink to="/about">關於我們</RouterLink> |
+  <RouterLink to="/xyz">聯絡我們</RouterLink> |
+  <hr />
+  <RouterView></RouterView>
+
+
+  <!-- <HomeView></HomeView>
   <AboutView></AboutView>
-  <ContactView></ContactView>
+  <ContactView></ContactView> -->
   <!-- <ClockComponent></ClockComponent>
   <BMIComponent></BMIComponent>
   <hr />
