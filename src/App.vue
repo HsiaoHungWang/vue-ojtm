@@ -4,6 +4,7 @@ import ApiStyle from './components/ApiStyle.vue';
 import BindingComponent from './components/BindingComponent.vue';
 import BindingDemo from './components/BindingDemo.vue';
 import BMIComponent from './components/BMIComponent.vue';
+import ClockComponent from './components/ClockComponent.vue';
 import ComputedDemo from './components/ComputedDemo.vue';
 import CountComponent from './components/CountComponent.vue';
 import EeventBinding from './components/EeventBinding.vue';
@@ -16,6 +17,7 @@ import ThirdComponent from './components/ThirdComponent.vue';
 
 <template>
   <h2 id="apph2">Hello, Vue!!</h2>
+  <ClockComponent></ClockComponent>
   <BMIComponent></BMIComponent>
   <hr />
   <ComputedDemo></ComputedDemo>
