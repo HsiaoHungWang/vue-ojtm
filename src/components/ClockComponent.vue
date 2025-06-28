@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 const formatTime = (today) => {
     const hours = today.getHours().toString().padStart(2, '0');  //03
@@ -8,16 +8,34 @@ const formatTime = (today) => {
     return `${hours}:${minutes}:${seconds}`;
 };
 
+const user = ref({
+    name: "Jack",
+    address: {
+        road: "台北路",
+        city: "台北市"
+    }
+})
+
 const clock = ref(formatTime(new Date()));
 
-window.setInterval(() => {
+watch(clock, (newTime, oldTime) => {
+    console.log(`Clock changed from ${oldTime} to ${newTime}`);
+}, { immediate: true }); //{ once: true }
+
+const changeTime = () => {
     const today = new Date();
     clock.value = formatTime(today);
-}, 1000);
+};
+
+// window.setInterval(() => {
+//     const today = new Date();
+//     clock.value = formatTime(today);
+// }, 1000);
 </script>
 
 <template>
     <div>
+        <button @click="changeTime()">更新時間</button>
         <h2>{{ clock }}</h2>
     </div>
 </template>
