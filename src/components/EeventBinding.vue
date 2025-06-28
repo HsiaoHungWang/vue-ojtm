@@ -3,9 +3,10 @@ import { ref } from 'vue';
 
 
 const userName = ref('guest');
+const age = ref(20);
 
 const submitHandler = () => {
-    if (userName.value.trim().length === 0) {
+    if (userName.value.length === 0) {
         alert(`請先輸入 ${userName.value}`);
         return;
     }
@@ -29,7 +30,13 @@ const submitHandler = () => {
     <div>
         <form action="/do" v-on:submit.prevent="submitHandler">
             <label for="name">姓名：</label>
-            <input type="text" name="name" v-model="userName" />
+
+            <input type="text" name="name" v-model.lazy.trim="userName" />
+            <p>目前姓名：{{ userName }}</p>
+            <label for="age">年紀
+                <input v-model.number="age" name="age" />
+            </label>
+            <p>目前年紀：{{ age }} {{ typeof age }}</p>
 
             <button type="submit">送出</button>
         </form>
