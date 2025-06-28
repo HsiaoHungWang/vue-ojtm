@@ -4,6 +4,7 @@ import ApiStyle from './components/ApiStyle.vue';
 import BindingComponent from './components/BindingComponent.vue';
 import BindingDemo from './components/BindingDemo.vue';
 import CountComponent from './components/CountComponent.vue';
+import EeventBinding from './components/EeventBinding.vue';
 import FirstComponent from './components/FirstComponent.vue';
 import SecondComponent from './components/SecondComponent.vue';
 import ThirdComponent from './components/ThirdComponent.vue';
@@ -13,6 +14,8 @@ import ThirdComponent from './components/ThirdComponent.vue';
 
 <template>
   <h2 id="apph2">Hello, Vue!!</h2>
+  <EeventBinding></EeventBinding>
+
   <FirstComponent />
   <SecondComponent />
   <ThirdComponent></ThirdComponent>
