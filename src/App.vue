@@ -11,13 +11,19 @@ import EeventBinding from './components/EeventBinding.vue';
 import FirstComponent from './components/FirstComponent.vue';
 import SecondComponent from './components/SecondComponent.vue';
 import ThirdComponent from './components/ThirdComponent.vue';
+import AboutView from './views/AboutView.vue';
+import ContactView from './views/ContactView.vue';
+import HomeView from './views/HomeView.vue';
 
 
 </script>
 
 <template>
   <h2 id="apph2">Hello, Vue!!</h2>
-  <ClockComponent></ClockComponent>
+  <HomeView></HomeView>
+  <AboutView></AboutView>
+  <ContactView></ContactView>
+  <!-- <ClockComponent></ClockComponent>
   <BMIComponent></BMIComponent>
   <hr />
   <ComputedDemo></ComputedDemo>
@@ -30,7 +36,7 @@ import ThirdComponent from './components/ThirdComponent.vue';
   <ApiStyle></ApiStyle>
   <CountComponent></CountComponent>
   <BindingComponent></BindingComponent>
-  <BindingDemo></BindingDemo>
+  <BindingDemo></BindingDemo> -->
 </template>
 
 <style scoped>
