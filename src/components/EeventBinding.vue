@@ -7,6 +7,7 @@ const age = ref(20);
 const educationValue = ref('')
 const educationText = ref('')
 const skills = ref([])
+const gender = ref('')
 
 const submitHandler = () => {
     if (userName.value.length === 0) {
@@ -50,6 +51,11 @@ const changeHandler = event => {
                 <input v-model.number="age" name="age" />
             </label>
             <p>目前年紀：{{ age }} {{ typeof age }}</p>
+            <label>性別： </label>
+            <label><input type="radio" v-model="gender" value="male" />男</label>
+            <label><input type="radio" v-model="gender" value="female" />女</label>
+
+            <p>性別是：{{ gender }}</p>
             <label>學歷：
                 <select v-model="educationValue" @change="changeHandler">
                     <option value="" disabled>請選擇</option>
