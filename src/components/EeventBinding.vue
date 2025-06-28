@@ -6,6 +6,7 @@ const userName = ref('guest');
 const age = ref(20);
 const educationValue = ref('')
 const educationText = ref('')
+const skills = ref([])
 
 const submitHandler = () => {
     if (userName.value.length === 0) {
@@ -59,6 +60,12 @@ const changeHandler = event => {
                 </select>
             </label>
             <p>選擇的學歷： {{ educationValue }} {{ educationText }}</p>
+            <label>專長：</label>
+            <label><input type="checkbox" value="C#" v-model="skills" /> C#</label>
+            <label><input type="checkbox" value="SQL" v-model="skills" /> SQL</label>
+            <label><input type="checkbox" value="JS" v-model="skills" /> JavaScript</label>
+            <label><input type="checkbox" value="Vue3" v-model="skills" /> Vue.js</label>
+            <p>選擇的專長：{{ skills }}</p>
             <button type="submit">送出</button>
         </form>
     </div>
