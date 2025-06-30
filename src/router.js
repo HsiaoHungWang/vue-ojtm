@@ -4,6 +4,8 @@ import AboutView from "./views/AboutView.vue";
 import ContactView from "./views/ContactView.vue";
 import Team1View from "./views/Team1View.vue";
 import Team2View from "./views/Team2View.vue";
+import MemberCenter from "./views/MemberCenter.vue";
+import TodosView_Full from "./views/TodosView_Full.vue";
 
 
 //URL <> Component
@@ -22,6 +24,10 @@ const routes = [
     },
     //http://localhost:5173/xyz  > ContactView
     {path:"/contact", component: ContactView, name: "contact"},
+    //http://localhost:5173/member  > MemberCenter
+    {path:"/member/:id", component:MemberCenter, name:"member",props:true},
+        //http://localhost:5173/todos  > MemberCenter
+    {path:"/todos", component:TodosView_Full, name:"todos"}
 ]
 
 const router = createRouter({

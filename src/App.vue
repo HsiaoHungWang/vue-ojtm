@@ -26,6 +26,8 @@ import HomeView from './views/HomeView.vue';
   <RouterLink :to="{ name: 'home' }">首頁</RouterLink> |
   <RouterLink :to="{ name: 'about' }">關於我們</RouterLink> |
   <RouterLink :to="{ name: 'contact' }">聯絡我們</RouterLink> |
+  <RouterLink :to="{ name: 'member', params: { id: '10' } }">會員中心</RouterLink> |
+  <RouterLink :to="{ name: 'todos' }">待做事項</RouterLink>
   <hr />
   <hr />
   <RouterView></RouterView>
