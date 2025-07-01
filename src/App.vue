@@ -20,14 +20,14 @@ import HomeView from './views/HomeView.vue';
 
 <template>
   <h2 id="apph2">Hello, Vue!!</h2>
-  <RouterLink to="/">首頁</RouterLink> |
-  <RouterLink to="/about">關於我們</RouterLink> |
-  <RouterLink to="/xyz">聯絡我們</RouterLink> |
-  <RouterLink :to="{ name: 'home' }">首頁</RouterLink> |
-  <RouterLink :to="{ name: 'about' }">關於我們</RouterLink> |
-  <RouterLink :to="{ name: 'contact' }">聯絡我們</RouterLink> |
-  <RouterLink :to="{ name: 'member', params: { id: '10' } }">會員中心</RouterLink> |
-  <RouterLink :to="{ name: 'todos' }">待做事項</RouterLink>
+  <!-- <RouterLink to="/">首頁</RouterLink> |
+  <RouterLink to="/about_ispan">關於我們</RouterLink> |
+  <RouterLink to="/contact">聯絡我們</RouterLink> | -->
+  <RouterLink :to="{ name: 'home' }" activeClass="active">首頁</RouterLink> |
+  <RouterLink :to="{ name: 'about' }" activeClass="active">關於我們</RouterLink> |
+  <RouterLink :to="{ name: 'contact' }" activeClass="active">聯絡我們</RouterLink> |
+  <RouterLink :to="{ name: 'member', params: { id: '10' } }" activeClass="active">會員中心</RouterLink> |
+  <RouterLink :to="{ name: 'todos' }" activeClass="active">待做事項</RouterLink>
   <hr />
   <hr />
   <RouterView></RouterView>
@@ -55,5 +55,9 @@ import HomeView from './views/HomeView.vue';
 <style scoped>
 #apph2 {
   color: red;
+}
+
+.active {
+  background-color: yellowgreen;
 }
 </style>
