@@ -18,6 +18,7 @@ import AboutView from './views/AboutView.vue';
 import ContactView from './views/ContactView.vue';
 import HomeView from './views/HomeView.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
+import FooterComponent from './components/FooterComponent.vue';
 
 
 </script>
@@ -57,6 +58,7 @@ import HeaderComponent from './components/HeaderComponent.vue';
   <BindingComponent></BindingComponent>
   <BindingDemo></BindingDemo> -->
   </div>
+  <FooterComponent></FooterComponent>
 </template>
 
 <style scoped>
