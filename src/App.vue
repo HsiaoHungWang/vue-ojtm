@@ -19,12 +19,14 @@ import ContactView from './views/ContactView.vue';
 import HomeView from './views/HomeView.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
+import JumbotronComponent from './components/JumbotronComponent.vue';
 
 
 </script>
 
 <template>
   <HeaderComponent></HeaderComponent>
+  <JumbotronComponent></JumbotronComponent>
   <div class="container mt-3">
     <RouterView></RouterView>
 
