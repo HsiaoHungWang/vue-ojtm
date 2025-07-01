@@ -17,24 +17,26 @@ import ThirdComponent from './components/ThirdComponent.vue';
 import AboutView from './views/AboutView.vue';
 import ContactView from './views/ContactView.vue';
 import HomeView from './views/HomeView.vue';
+import HeaderComponent from './components/HeaderComponent.vue';
 
 
 </script>
 
 <template>
-  <div class="container">
-    <h2 id="apph2">Hello, Vue!!</h2>
+  <HeaderComponent></HeaderComponent>
+  <div class="container mt-3">
+    <RouterView></RouterView>
+
+
+
+
+    <!-- <h2 id="apph2">Hello, Vue!!</h2> -->
     <!-- <RouterLink to="/">首頁</RouterLink> |
   <RouterLink to="/about_ispan">關於我們</RouterLink> |
   <RouterLink to="/contact">聯絡我們</RouterLink> | -->
-    <RouterLink :to="{ name: 'home' }" activeClass="active">首頁</RouterLink> |
-    <RouterLink :to="{ name: 'about' }" activeClass="active">關於我們</RouterLink> |
-    <RouterLink :to="{ name: 'contact' }" activeClass="active">聯絡我們</RouterLink> |
-    <RouterLink :to="{ name: 'member', params: { id: '10' } }" activeClass="active">會員中心</RouterLink> |
-    <RouterLink :to="{ name: 'todos' }" activeClass="active">待做事項</RouterLink>
-    <hr />
-    <hr />
-    <RouterView></RouterView>
+
+
+
 
 
     <!-- <HomeView></HomeView>
