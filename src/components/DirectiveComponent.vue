@@ -17,6 +17,8 @@ const regions = ref([
 
 const selectedRegion = ref("");
 const user = ref({ "name": "Jack", "age": 30, "email": "Jack@gmail.com" })
+const bgColor = ref('yellow');
+
 </script>
 
 <template>
@@ -49,6 +51,9 @@ const user = ref({ "name": "Jack", "age": 30, "email": "Jack@gmail.com" })
                 <li class="page-item" v-for="i in 8"><a class="page-link" href="#">{{ i }}</a></li>
             </ul>
         </nav>
+        <!--style-->
+        <input type="color" />
+        <div style="width:200px;height:200px;border:1px solid green" :style="{ backgroundColor: bgColor }"></div>
     </div>
 </template>
 
