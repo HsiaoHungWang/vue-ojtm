@@ -7,6 +7,7 @@ import Team2View from "./views/Team2View.vue";
 import MemberCenter from "./views/MemberCenter.vue";
 import TodosView_Full from "./views/TodosView_Full.vue";
 import NotFound from "./views/NotFound.vue";
+import TabsView from "./views/TabsView.vue";
 
 
 //URL <> Component
@@ -35,7 +36,10 @@ const routes = [
     {path:"/member/:id", component:MemberCenter, name:"member",props:true},
         //http://localhost:5173/todos  > TodosView_Full
     {path:"/todos", component:TodosView_Full, name:"todos"},
-    {path:'/:pathMatch(.*)*',component:NotFound, name:"notfound"}
+    //http://localhost:5173/tabs
+    {path:'/tabs', component:TabsView, name:"tabs"},
+    {path:'/:pathMatch(.*)*',component:NotFound, name:"notfound"},
+      
 ]
 
 const router = createRouter({

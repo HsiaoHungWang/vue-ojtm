@@ -29,7 +29,12 @@
                             activeClass="active">會員中心</RouterLink>
                     </li>
                     <li>
-                        <RouterLink :to="{ name: 'todos' }" class="nav-link px-2 text-white" activeClass="active">待做事項
+                        <RouterLink :to="{ name: 'todos' }" class="nav-link px-2 text-white" activeClass="active">待辦事項
+                        </RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink :to="{ name: 'tabs' }" class="nav-link px-2 text-white" activeClass="active">
+                            TabsView
                         </RouterLink>
                     </li>
                 </ul>
