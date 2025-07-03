@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import mycat from '@/assets/images/cat3.jpg'
+
 
 //tab enter
 const userName = ref('Tom')
@@ -8,6 +8,7 @@ const isAdmin = ref(true)
 
 const dog = ref('/images/dog1.jpg')
 const cat = ref('/src/assets/images/cat3.jpg')
+import mycat from '@/assets/images/cat3.jpg'
 </script>
 
 <template>
