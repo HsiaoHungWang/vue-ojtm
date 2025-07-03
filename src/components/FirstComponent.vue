@@ -1,5 +1,6 @@
 <template>
     <h2 id="myH">第一個 Component</h2>
+    <input type="text" />
 </template>
 <style scoped>
 h2 {

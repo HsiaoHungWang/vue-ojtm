@@ -27,7 +27,9 @@ const clickHandler = index => {
                     tab.name }}</a>
             </li>
         </ul>
-        <component :is="tabs[activedIndex].component"></component>
+        <KeepAlive>
+            <component :is="tabs[activedIndex].component"></component>
+        </KeepAlive>
     </div>
 </template>
 
