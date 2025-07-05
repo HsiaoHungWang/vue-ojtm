@@ -1,7 +1,7 @@
 <script setup>
 import TodoAdd from '@/components/TodoAdd.vue';
 import TodoFooter from '@/components/TodoFooter.vue';
-import { computed, ref } from 'vue';
+import { computed, ref, watchEffect } from 'vue';
 
 
 // const todos = ref(
@@ -51,6 +51,19 @@ const remaining = computed(() => {
     return activeTodos.length
 })
 
+//響應式資料改變了就把資料寫進localStorage
+//computed => 只做計算不要有 side effect
+//watch
+// watch('todos',(newTodos, oldTodos){
+
+// },{deep:true,immediate:true})
+
+//watchEffect
+watchEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos.value));
+})
+
+
 </script>
 
 <template>
@@ -65,7 +78,7 @@ const remaining = computed(() => {
                         <div>
                             <input v-model="todo.completed" class="form-check-input me-3" type="checkbox">
                             <label class="form-check-label" :class="{ completed: todo.completed }">{{ todo.title
-                            }}</label>
+                                }}</label>
                         </div>
                         <button @click="removeTodo(todo)" class="badge bg-danger rounded-pill border-0">X</button>
                     </div>
