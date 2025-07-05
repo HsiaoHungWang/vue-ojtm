@@ -1,5 +1,6 @@
 <script setup>
 import TodoAdd from '@/components/TodoAdd.vue';
+import TodoFooter from '@/components/TodoFooter.vue';
 import { computed, ref } from 'vue';
 
 
@@ -59,7 +60,7 @@ const remaining = computed(() => {
                         <div>
                             <input v-model="todo.completed" class="form-check-input me-3" type="checkbox">
                             <label class="form-check-label" :class="{ completed: todo.completed }">{{ todo.title
-                            }}</label>
+                                }}</label>
                         </div>
                         <button @click="removeTodo(todo)" class="badge bg-danger rounded-pill border-0">X</button>
                     </div>
@@ -67,10 +68,7 @@ const remaining = computed(() => {
                 </li>
 
             </ul>
-            <div class="mt-3 d-flex justify-content-between">
-                <strong class=" me-3">尚有 {{ remaining }} 個工作未完成</strong>
-                <button class="btn btn-warning me-3" @click="removeCompleted">清除完成工作</button>
-            </div>
+            <TodoFooter></TodoFooter>
         </div>
         <div class="col-3"></div>
 
