@@ -23,6 +23,7 @@ import JumbotronComponent from './components/JumbotronComponent.vue';
 import DirectiveComponent from './components/DirectiveComponent.vue';
 import ChildComponent from './components/ChildComponent.vue';
 import { ref } from 'vue';
+import FancyButton from './components/FancyButton.vue';
 
 
 const message = ref('這個訊息來自App.vue')
@@ -42,6 +43,16 @@ const likesEventHandler = data => {
   <div class="container mt-3">
     <RouterView></RouterView>
     <hr />
+    <!-- <FancyButton>
+      <i class="bi bi-airplane-fill"></i> 送出
+    </FancyButton>
+    <FancyButton>
+      <i class="bi bi-apple"></i> 登入
+    </FancyButton>
+
+    <FancyButton>
+      <i class="bi bi-cart-fill"></i> 加入購物車
+    </FancyButton> -->
     <!-- <DirectiveComponent></DirectiveComponent> -->
     <!--:message="message"-->
     <!--message、likes 是自訂的屬性-->
