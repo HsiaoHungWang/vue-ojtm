@@ -14,6 +14,9 @@ const todos = ref(
 const uniqueId = () => Date.now().toString(36) + Math.random().toString(36).substring(2, 9);
 
 //待辦事項新增
+const addEventHandler = todo => {
+    todos.value.push({ "id": uniqueId(), "title": todo, "completed": false })
+}
 
 
 
@@ -49,14 +52,14 @@ const remaining = computed(() => {
         <div class="col-3"> </div>
         <div class="col-6">
             <h3>Todos Page</h3>
-            <TodoAdd></TodoAdd>
+            <TodoAdd @addEvent="addEventHandler"></TodoAdd>
             <ul class="list-group mt-3">
                 <li v-for="todo in todos" :key="todo.id" class="list-group-item">
                     <div class="d-flex justify-content-between">
                         <div>
                             <input v-model="todo.completed" class="form-check-input me-3" type="checkbox">
                             <label class="form-check-label" :class="{ completed: todo.completed }">{{ todo.title
-                                }}</label>
+                            }}</label>
                         </div>
                         <button @click="removeTodo(todo)" class="badge bg-danger rounded-pill border-0">X</button>
                     </div>
