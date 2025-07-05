@@ -60,7 +60,7 @@ const remaining = computed(() => {
                         <div>
                             <input v-model="todo.completed" class="form-check-input me-3" type="checkbox">
                             <label class="form-check-label" :class="{ completed: todo.completed }">{{ todo.title
-                                }}</label>
+                            }}</label>
                         </div>
                         <button @click="removeTodo(todo)" class="badge bg-danger rounded-pill border-0">X</button>
                     </div>
@@ -68,7 +68,7 @@ const remaining = computed(() => {
                 </li>
 
             </ul>
-            <TodoFooter></TodoFooter>
+            <TodoFooter :total="remaining" @removeEvent="removeCompleted"></TodoFooter>
         </div>
         <div class="col-3"></div>
 
