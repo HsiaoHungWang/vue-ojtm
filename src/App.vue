@@ -46,7 +46,7 @@ const likesEventHandler = data => {
     <!--:message="message"-->
     <!--message、likes 是自訂的屬性-->
     <!--用來將資料傳遞給子組件-->
-    <ChildComponent :message :likes="count" @myEvent="myEventHandler" @likesEvent="likesEventHandler"></ChildComponent>
+    <!-- <ChildComponent :message :likes="count" @myEvent="myEventHandler" @likesEvent="likesEventHandler"></ChildComponent> -->
     <!--myEvent 自訂的事件、myEventHandler 是myEvent事件觸發後會執行的function-->
     <!--myEvent 事件會在子組件透過 emit('myEvent') 來觸發-->
     <!-- <h2 id="apph2">Hello, Vue!!</h2> -->
