@@ -2,7 +2,8 @@
 import TodoAdd from '@/components/TodoAdd.vue';
 import TodoFooter from '@/components/TodoFooter.vue';
 import { computed, ref, watchEffect } from 'vue';
-
+import { useTodoStore } from '@/stores/todo';
+const storeTodo = useTodoStore();
 
 // const todos = ref(
 //     [
@@ -49,6 +50,7 @@ const removeCompleted = () => {
 const remaining = computed(() => {
     const activeTodos = todos.value.filter(todo => !todo.completed)
     return activeTodos.length
+    //store.count(activeTodos.length)
 })
 
 //響應式資料改變了就把資料寫進localStorage
@@ -61,6 +63,9 @@ const remaining = computed(() => {
 //watchEffect
 watchEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos.value));
+
+    const activeTodos = todos.value.filter(todo => !todo.completed)
+    storeTodo.unfinishedQtyChange(activeTodos.length)
 })
 
 
@@ -86,7 +91,7 @@ watchEffect(() => {
                 </li>
 
             </ul>
-            <TodoFooter :total="remaining" @removeEvent="removeCompleted"></TodoFooter>
+            <TodoFooter @removeEvent="removeCompleted"></TodoFooter>
         </div>
         <div class="col-3"></div>
 

@@ -1,4 +1,6 @@
 <script setup>
+import { useTodoStore } from '@/stores/todo';
+const storeTodo = useTodoStore()
 
 </script>
 
@@ -29,7 +31,8 @@
                             activeClass="active">會員中心</RouterLink>
                     </li>
                     <li>
-                        <RouterLink :to="{ name: 'todos' }" class="nav-link px-2 text-white" activeClass="active">待辦事項
+                        <RouterLink :to="{ name: 'todos' }" class="nav-link px-2 text-white" activeClass="active">
+                            待辦事項 <span class="badge text-bg-secondary">{{ storeTodo.unfinishedQty }}</span>
                         </RouterLink>
                     </li>
                     <li>
