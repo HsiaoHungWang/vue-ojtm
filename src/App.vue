@@ -24,6 +24,7 @@ import DirectiveComponent from './components/DirectiveComponent.vue';
 import ChildComponent from './components/ChildComponent.vue';
 import { ref } from 'vue';
 import FancyButton from './components/FancyButton.vue';
+import CategoriesComponent from './components/CategoriesComponent.vue';
 
 
 const message = ref('這個訊息來自App.vue')
@@ -43,6 +44,8 @@ const likesEventHandler = data => {
   <div class="container mt-3">
     <RouterView></RouterView>
     <hr />
+    <CategoriesComponent></CategoriesComponent>
+
     <!-- <FancyButton>
       <i class="bi bi-airplane-fill"></i> 送出
     </FancyButton>
