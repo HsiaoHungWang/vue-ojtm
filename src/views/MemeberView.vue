@@ -7,10 +7,27 @@ const members = ref([]);
 const apiUrl = `${import.meta.env.VITE_API_BASEURL}/Members`
 const staticUrl = `${import.meta.env.VITE_STATICURL}/images`
 
+//讀取所有會員資料
 const loadMembers = async () => {
     const response = await fetch(apiUrl);
     const datas = await response.json();
     members.value = datas;
+}
+
+//刪除會員資料
+const deleteHandler = async (id) => {
+    if (!window.confirm('真的要刪除嗎?')) return;
+
+    const deleteApi = `${apiUrl}/${id}`;
+    const response = fetch(deleteApi, {
+        method: 'DELETE'
+    })
+
+    if (response.ok) {
+        alert('會員刪除成功!!');
+        loadMembers();
+    }
+
 }
 
 loadMembers();
@@ -26,6 +43,7 @@ loadMembers();
                     <th>姓名</th>
                     <th>電子郵件</th>
                     <th>年紀</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +52,9 @@ loadMembers();
                     <td>{{ member.name }}</td>
                     <td>{{ member.email }}</td>
                     <td>{{ member.age }}</td>
+                    <td>
+                        <button @click="deleteHandler(member.memberId)" class="btn btn-danger">刪除</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
