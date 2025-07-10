@@ -19,7 +19,7 @@ const deleteHandler = async (id) => {
     if (!window.confirm('真的要刪除嗎?')) return;
 
     const deleteApi = `${apiUrl}/${id}`;
-    const response = fetch(deleteApi, {
+    const response = await fetch(deleteApi, {
         method: 'DELETE'
     })
 
