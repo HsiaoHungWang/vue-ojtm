@@ -5,6 +5,7 @@ import { ref } from 'vue';
 const members = ref([]);
 
 const apiUrl = `${import.meta.env.VITE_API_BASEURL}/Members`
+const staticUrl = `${import.meta.env.VITE_STATICURL}/images`
 
 const loadMembers = async () => {
     const response = await fetch(apiUrl);
@@ -29,7 +30,7 @@ loadMembers();
             </thead>
             <tbody>
                 <tr v-for="member in members" :key="member.memberId">
-                    <td>{{ member.fileName }}</td>
+                    <td><img :src="`${staticUrl}/${member.fileName}`" class="img-thumbnail" style="width:100px" /></td>
                     <td>{{ member.name }}</td>
                     <td>{{ member.email }}</td>
                     <td>{{ member.age }}</td>
