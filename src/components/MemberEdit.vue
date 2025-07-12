@@ -1,5 +1,7 @@
 <script setup>
-
+const props = defineProps({
+    member: Object
+})
 </script>
 
 <template>
@@ -19,16 +21,16 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="InputName1" class="form-label">姓名</label>
-                        <input type="text" class="form-control" id="InputName1">
+                        <input type="text" class="form-control" id="InputName1" v-model="member.name">
                     </div>
                     <div class="mb-3">
                         <label for="InputEmail1" class="form-label">電子郵件</label>
-                        <input type="email" class="form-control" id="InputEmail1">
+                        <input type="email" class="form-control" id="InputEmail1" v-model="member.email">
 
                     </div>
                     <div class="mb-3">
                         <label for="InputAge1" class="form-label">年紀</label>
-                        <input type="number" class="form-control" id="InputAge1">
+                        <input type="number" class="form-control" id="InputAge1" v-model="member.age">
 
                     </div>
                 </div>

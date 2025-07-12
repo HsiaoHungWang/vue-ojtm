@@ -5,6 +5,7 @@ import { ref } from 'vue';
 
 
 const members = ref([]);
+const editMember = ref({});
 
 const apiUrl = `${import.meta.env.VITE_API_BASEURL}/Members`
 const staticUrl = `${import.meta.env.VITE_STATICURL}/images`
@@ -44,6 +45,11 @@ const addMemberHandler = async (fd) => {
     }
 }
 
+//編輯會員資料
+const editHandler = member => {
+    editMember.value = member;
+}
+
 loadMembers();
 </script>
 
@@ -70,7 +76,7 @@ loadMembers();
                             <td>{{ member.email }}</td>
                             <td>{{ member.age }}</td>
                             <td>
-                                <button data-bs-toggle="modal" data-bs-target="#editModal"
+                                <button @click="editHandler(member)" data-bs-toggle="modal" data-bs-target="#editModal"
                                     class="btn btn-secondary mx-3"><i class="bi bi-pencil-fill"></i> 修改</button>
                                 <button @click="deleteHandler(member.memberId)" class="btn btn-danger"><i
                                         class="bi bi-trash-fill"></i> 刪除</button>
@@ -86,7 +92,7 @@ loadMembers();
 
     </div>
 
-    <MemberEdit></MemberEdit>
+    <MemberEdit :member="editMember"></MemberEdit>
 </template>
 
 <style lang="css" scoped></style>
