@@ -1,10 +1,18 @@
 <script setup>
+const emit = defineEmits(['addMember'])
 
+const submitHandler = () => {
+    const formData = new FormData(document.querySelector('#form1'));
+
+    emit('addMember', formData);
+
+    // alert('submit')
+}
 </script>
 
 <template>
     <div>
-        <form>
+        <form id="form1" @submit.prevent="submitHandler">
             <div class="mb-3">
                 <label for="InputName" class="form-label">姓名</label>
                 <input type="text" class="form-control" id="InputName" name="name">

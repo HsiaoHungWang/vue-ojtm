@@ -31,6 +31,18 @@ const deleteHandler = async (id) => {
 
 }
 
+//新增會員資料
+const addMemberHandler = async (fd) => {
+    const response = await fetch(apiUrl, {
+        method: 'POST',
+        body: fd
+    })
+    if (response.ok) {
+        alert('新增成功');
+        loadMembers();
+    }
+}
+
 loadMembers();
 </script>
 
@@ -65,7 +77,7 @@ loadMembers();
                 </table>
             </div>
             <div class="col-3">
-                <MemberAdd></MemberAdd>
+                <MemberAdd @addMember="addMemberHandler"></MemberAdd>
             </div>
         </div>
 
