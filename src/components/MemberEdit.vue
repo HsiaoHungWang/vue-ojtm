@@ -2,6 +2,12 @@
 const props = defineProps({
     member: Object
 })
+const emit = defineEmits(['updateMember'])
+
+const clickHandler = () => {
+    //console.log(props.member);
+    emit('updateMember', props.member);
+}
 </script>
 
 <template>
@@ -36,7 +42,7 @@ const props = defineProps({
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-                    <button type="button" class="btn btn-primary">修改</button>
+                    <button type="button" @click="clickHandler" class="btn btn-primary">修改</button>
                 </div>
             </div>
         </div>

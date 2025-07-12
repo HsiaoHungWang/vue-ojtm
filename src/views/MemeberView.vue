@@ -50,6 +50,21 @@ const editHandler = member => {
     editMember.value = member;
 }
 
+//修改會員資料
+//PUT https://localhost:7152/api/Members/1022
+const updateMemberHandler = async (member) => {
+    const updateApi = `${apiUrl}/${member.memberId}`;
+    const response = await fetch(updateApi, {
+        method: 'PUT',
+        body: JSON.stringify(member),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    if (response.ok) {
+        alert('會員修改成功')
+        loadMembers();
+    }
+}
+
 loadMembers();
 </script>
 
@@ -92,7 +107,7 @@ loadMembers();
 
     </div>
 
-    <MemberEdit :member="editMember"></MemberEdit>
+    <MemberEdit :member="editMember" @updateMember="updateMemberHandler"></MemberEdit>
 </template>
 
 <style lang="css" scoped></style>
