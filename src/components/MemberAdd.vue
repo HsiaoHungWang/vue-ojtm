@@ -1,10 +1,20 @@
 <script setup>
+import { ref } from 'vue';
+
 const emit = defineEmits(['addMember'])
 
+const addForm = ref(null); //DOM
+
 const submitHandler = () => {
-    const formData = new FormData(document.querySelector('#form1'));
+    // const theForm = document.querySelector('#form1');
+    // const formData = new FormData(theForm);
+
+    const formData = new FormData(addForm.value);
 
     emit('addMember', formData);
+    addForm.value.reset();
+
+    // theForm.reset();
 
     // alert('submit')
 }
@@ -12,7 +22,7 @@ const submitHandler = () => {
 
 <template>
     <div>
-        <form id="form1" @submit.prevent="submitHandler">
+        <form id="form1" ref="addForm" @submit.prevent="submitHandler">
             <div class="mb-3">
                 <label for="InputName" class="form-label">姓名</label>
                 <input type="text" class="form-control" id="InputName" name="name">
@@ -41,6 +51,7 @@ const submitHandler = () => {
             </div>
 
             <button type="submit" class="btn btn-primary">新增</button>
+            <button type="reset" class="btn btn-warning">清除</button>
         </form>
     </div>
 </template>

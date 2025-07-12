@@ -2,7 +2,7 @@
 import MemberAdd from '@/components/MemberAdd.vue';
 import MemberEdit from '@/components/MemberEdit.vue';
 import { ref } from 'vue';
-
+import { Modal } from 'bootstrap';
 
 const members = ref([]);
 const editMember = ref({});
@@ -62,6 +62,11 @@ const updateMemberHandler = async (member) => {
     if (response.ok) {
         alert('會員修改成功')
         loadMembers();
+
+        //隱藏Modal
+        const memberModal = document.querySelector('#editModal');
+        const theModel = Modal.getInstance(memberModal);
+        theModel.hide();
     }
 }
 

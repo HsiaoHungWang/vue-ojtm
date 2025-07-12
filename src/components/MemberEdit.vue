@@ -1,4 +1,6 @@
 <script setup>
+
+
 const props = defineProps({
     member: Object
 })
@@ -7,6 +9,8 @@ const emit = defineEmits(['updateMember'])
 const clickHandler = () => {
     //console.log(props.member);
     emit('updateMember', props.member);
+
+
 }
 </script>
 
