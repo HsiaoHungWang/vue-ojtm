@@ -41,6 +41,11 @@ const storeTodo = useTodoStore()
                         </RouterLink>
                     </li>
                     <li>
+                        <RouterLink :to="{ name: 'spots' }" class="nav-link px-2 text-white" activeClass="active">
+                            景點瀏覽
+                        </RouterLink>
+                    </li>
+                    <li>
                         <RouterLink :to="{ name: 'members' }" class="nav-link px-2 text-white" activeClass="active">
                             會員管理
                         </RouterLink>

@@ -9,6 +9,7 @@ import TodosView_Full from "./views/TodosView_Full.vue";
 import NotFound from "./views/NotFound.vue";
 import TabsView from "./views/TabsView.vue";
 import MemeberView from "./views/MemeberView.vue";
+import SpotsView from "./views/SpotsView.vue";
 
 
 //URL <> Component
@@ -41,6 +42,9 @@ const routes = [
     {path:'/tabs', component:TabsView, name:"tabs"},
     //http://localhost:5173/members
     {path:'/members', component:MemeberView, name:"members"},
+    //http://localhost:5173/spots
+    {path:'/spots', component:SpotsView, name:"spots"},
+    
     {path:'/:pathMatch(.*)*',component:NotFound, name:"notfound"},
       
 ]
